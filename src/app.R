@@ -85,6 +85,7 @@ filter_layout <- dbcCard(
   ),
   body = TRUE,
   color = "light",
+  className = "card border-0"
 )
 
 ## Plot layout
