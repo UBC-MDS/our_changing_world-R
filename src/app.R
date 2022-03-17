@@ -349,7 +349,7 @@ app$callback(
       chart <- chart + scale_color_ipsum() + theme_ipsum_tw()
       chart_final <- ggplotly(
         chart, height = 3000, width=800, tooltip = c(y_axis)
-        ) |> layout(xaxis = list(side = "top"))
+        ) %>% layout(xaxis = list(side = "top"))
       
       return(chart_final)
     }
