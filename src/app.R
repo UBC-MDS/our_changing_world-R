@@ -17,7 +17,9 @@ app <- Dash$new(external_stylesheets = dbcThemes$SKETCHY)
 # Variables
 year_breaks <- c(1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, 2002, 2007)
 
-
+gapminder <- gapminder %>%
+  filter(country != "Kuwait")
+  
 # components
 header <- htmlH4(
   "Our Changing World!",
