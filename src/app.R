@@ -8,6 +8,7 @@ library(dashBootstrapComponents)
 library(dashCoreComponents)
 library(ggplot2)
 library(purrr)
+library(hrbrthemes)
 library(ggthemes)
 library(scales)
 
@@ -101,9 +102,9 @@ world_ranking <- htmlDiv(
     htmlBr(),
     dccGraph(
       id = "world-ranking",
-    #   responsive = TRUE,
+      # responsive = TRUE,
       className = "embed-responsive embed-responsive-item",
-      style = list(width = "200%", height = "100%")
+      style = list(width = "100%", height = "100%")
     )
   )
 )
@@ -115,7 +116,7 @@ world_trend <- htmlDiv(
     htmlBr(),
     dccGraph(
       id = "world-trend",
-      responsive = TRUE,
+      # responsive = TRUE,
       className = "embed-responsive embed-responsive-item",
       style = list(width = "100%", height = "100%")
     )
@@ -157,15 +158,13 @@ app$layout(
       className = "mb-4"
       ),
       dbcRow(world_ranking,
-        justify = "center",
         className = "mb-4",
-        align = "start"
+        align = "end"
       )
     ),
     className = "g-0",
     fluid = "TRUE",
     style = list(
-      height = "100vh",
       align = "center",
       "padding-left" = "10px",
       "padding-right" = "10px"
@@ -244,8 +243,7 @@ app$callback(
       xlab(NULL) +
       ylab(NULL) +
       labs(color = "Continent") +
-      scale_color_fivethirtyeight() +
-      theme_fivethirtyeight() +
+      scale_color_ipsum() + theme_map() +
       theme(
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),
@@ -311,7 +309,7 @@ app$callback(
         scale_x_log10() +
         geom_vline(xintercept = year_filter, linetype = "longdash")
     }
-    p <- p + scale_color_fivethirtyeight() + theme_fivethirtyeight()
+    p <- p + scale_color_ipsum() + theme_ipsum_tw()
 
     ggplotly(p)
   }
@@ -322,42 +320,38 @@ app$callback(
   output("world-ranking", "figure"),
   list(input("year_id", "value"), input("target", "value")),
   function(x_year, y_axis) {
-    df <- gapminder %>%
-      filter(year == x_year)
-    bar <- df %>%
-      arrange(desc(!!sym(y_axis))) %>%
-      mutate(ranking = paste0("#", as.numeric(rownames(df)))) %>%
-      ggplot() +
-      aes(
-        x = !!sym(y_axis),
-        y = reorder(country, !!sym(y_axis)),
-        fill = continent,
-        label = ranking
-      ) +
-      geom_bar(stat = "identity") +
-      geom_text() +
-      theme(text = element_text(size = 20)) +
-      scale_x_continuous(labels = comma)
-
-    if (y_axis == "pop") {
-      chart <- bar + labs(x = "Population", y = "Country")
+      df <- gapminder %>% 
+        filter(year == x_year)
+      bar <- df %>% 
+        arrange(desc(!!sym(y_axis))) %>% 
+        mutate(ranking = paste0('#', as.numeric(rownames(df)))) %>% 
+        ggplot() +
+        aes(x = !!sym(y_axis), 
+            y = reorder(country, !!sym(y_axis)), 
+            fill = continent, 
+            label = ranking) +
+        geom_bar(stat = 'identity') +
+        geom_text() +
+        theme(text = element_text(size = 20)) +
+        scale_x_continuous(labels = comma)
+      
+      if (y_axis == "pop") {
+        chart <- bar + labs(x = "Population", y = "Country")
+      }
+      if (y_axis == "lifeExp") {
+        chart <- bar + labs(x = "Life Expectancy [years]", y = "Country")
+      }
+      if (y_axis == "gdpPercap") {
+        chart <- bar + labs(x = "GDP per Capita [USD]", y = "Country")
+      }
+      
+      chart <- chart + scale_color_ipsum() + theme_ipsum_tw()
+      chart_final <- ggplotly(
+        chart, height = 3000, width=800, tooltip = c(y_axis)
+        ) |> layout(xaxis = list(side = "top"))
+      
+      return(chart_final)
     }
-    if (y_axis == "lifeExp") {
-      chart <- bar + labs(x = "Life Expectancy [years]", y = "Country")
-    }
-    if (y_axis == "gdpPercap") {
-      chart <- bar + labs(x = "GDP per Capita [USD]", y = "Country")
-    }
-
-    chart <- chart + scale_color_fivethirtyeight() + theme_fivethirtyeight()
-
-    chart_final <- ggplotly(
-      chart,
-      height = 3000, width = 800, tooltip = c(y_axis)
-    ) |> layout(xaxis = list(side = "top"))
-
-    return(chart_final)
-  }
 )
 
 
@@ -369,7 +363,6 @@ app$callback(
     df <- gapminder %>%
       filter(year == saal) %>%
       dplyr::select(-year)
-
 
     # Interactive version
     # Reference: https://www.r-graph-gallery.com/
@@ -394,7 +387,7 @@ app$callback(
       xlab("GDP Per Capita") +
       scale_y_continuous(labels = scales::comma)
 
-    p <- p + scale_color_fivethirtyeight() + theme_fivethirtyeight()
+    p <- p + scale_color_ipsum() + theme_ipsum_tw()
 
     # ggplot interactive with plotly
     ggplotly(p, tooltip = "text")

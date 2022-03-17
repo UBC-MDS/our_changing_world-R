@@ -7,5 +7,8 @@ r["CRAN"] <- "http://cloud.r-project.org"
 options(repos = r)
 
 # packages go here
-install.packages(c("dash", "tidyverse", "gapminder", "dashHtmlComponents", "dashCoreComponents", "plotly", "remotes", "ggplot2", "purrr", "ggthemes"))
+install.packages(c(
+  "dash", "scales", "tidyverse",
+  "gapminder", "dashHtmlComponents", "dashCoreComponents", "plotly", "remotes", "ggplot2", "purrr", "hrbrthemes", "ggthemes"
+))
 remotes::install_github("facultyai/dash-bootstrap-components@r-release")
