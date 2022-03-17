@@ -365,7 +365,6 @@ app$callback(
       dplyr::select(-year)
 
     # Interactive version
-    # Reference: https://www.r-graph-gallery.com/
     p <- df %>%
       mutate(gdpPercap = round(gdpPercap, 0)) %>%
       mutate(pop = round(pop / 1000000, 2)) %>%
@@ -379,13 +378,16 @@ app$callback(
       )) %>%
       ggplot(aes(
         x = gdpPercap, y = lifeExp, size = pop,
-        color = continent, text = text
-      )) +
-      geom_point(alpha = 0.7) +
+       fill = continent, text = text
+      ), shape = 21, colour = "white", alpha = 0.8) +
+      geom_point() +
       scale_size(range = c(1.4, 19), name = "Population (M)") +
-      ylab("Life Expectancy") +
-      xlab("GDP Per Capita") +
-      scale_y_continuous(labels = scales::comma)
+      ylab("Life Expectancy[Years]") +
+      xlab("GDP Per Capita[USD]") +
+      scale_x_log10(labels = scales::dollar) +
+      scale_fill_brewer(palette = "Set2") +
+      scale_size_continuous(range = c(1, 20)) +
+      guides(size = FALSE) 
 
     p <- p + scale_color_ipsum() + theme_ipsum_tw()
 
