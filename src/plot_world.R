@@ -7,7 +7,7 @@ plot_world <- function(yr, colnm){
   world <- map_data('world') %>%
     filter(lat > -56)
   
-  countries <- read_csv('../data/world_country.csv',
+  countries <- read_csv('data/world_country.csv',
                         col_select = c(4, 3, 2)
   )
   colnames(countries) <- c('country', 'long', 'lat')
@@ -65,4 +65,4 @@ get_para <- function(yr, colnm){
   list(col_name_df[colnm, 1], scale)
 }
 
-plot_world(2002, 'pop')
+print(plot_world(2002, 'pop'))
