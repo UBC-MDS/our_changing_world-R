@@ -41,7 +41,7 @@ This dashboard was created with the objective of making such pertinent fact-base
 
 ## Description of "Our Changing World" App
 
-The [dashboard](https://our-changing-world.herokuapp.com/) consists of 4 main sections: 
+The [dashboard](https://ou-changing-world-r.herokuapp.com/) consists of 4 main sections: 
 
 (i) "What do you want to know" panel on the upper left: Here, the user can choose a topic that they are interested in learning more about out of three choices: Population, Life Expectancy, and GDP per Capita. The user can also specify the year by using the scroll bar, which is available in 5 year intervals between 1952 and 2007.
 
@@ -73,7 +73,7 @@ To run this analysis using Docker, clone/download this repository, use the comma
 docker-compose up
 ```
 
-A web server will be started at port 8000 to serve the app. App can be accessed in local machine by accessing [http://localhost:8000](http://localhost:8000) in any of the modern web browser.
+A web server will be started at port 8000 to serve the app. App can be accessed in local machine by accessing [http://localhost:8050](http://localhost:8050) in any of the modern web browser.
 
 ### Option 2: Install dependencies in local machine
 
