@@ -57,23 +57,37 @@ All plots are automatically updated when new selections are made in the "What do
 
 ## Downloading and Running Locally
 
-To download the contents of this GitHub page on to your local machine follow these steps:
+### Option 1: Using `docker`
 
-1. Copy and paste the following link: `git clone https://github.com/UBC-MDS/our_changing_world.git` to your Terminal. 
+To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and run with `docker-compose`.
+
+**Steps -** 
+
+1. Copy and paste the following link: `git clone https://github.com/UBC-MDS/our_changing_world-R.git` to your Terminal. 
 
 2. On your terminal, type: `cd our_changing_world`.
 
-3. To run a development instance locally, first create a virtualenv by typing: `conda create --name myenv_ourchangingworld`
+3. Run the following command in your terminal.
 
-4. Install the requirements from ***requirements.txt*** by typing: `pip install -r requirements.txt` 
+```bash
+docker-compose up
+```
 
-5. Type the following command if the environment isn't automatically activated after Step 3: `conda activate myenv_ourchangingworld`
+A web server will be started at port 8000 to serve the app. App can be accessed in local machine by accessing [http://localhost:8000](http://localhost:8000) in any of the modern web browser.
 
-6. Launch ***app.py*** using the Python executable from the virtualenv: `python src/app.py`
+### Option 2: Install dependencies in local machine
 
-7. Using any modern web browser, visit http://127.0.0.1:9090/ to access the app.
+To download the contents of this GitHub page on to your local machine follow these steps:
 
-**Note that for Steps 3 - 6 to work smoothly, you have to be in the our_changing_world directory.**
+1. Copy and paste the following link: `git clone https://github.com/UBC-MDS/our_changing_world-R.git` to your Terminal. 
+
+2. On your terminal, type: `cd our_changing_world`.
+
+3. To run an app instance locally, first install the dependencies by typing: `Rscript init.R`
+
+4. Launch ***app.py*** by typing: `Rscript src/app.py`
+
+5. Using any modern web browser, visit http://127.0.0.1:8050/ to access the app.
 
 ## Get involved
 
