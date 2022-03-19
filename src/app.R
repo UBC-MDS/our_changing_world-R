@@ -332,12 +332,14 @@ app$callback(
         ggplot() +
         aes(x = !!sym(y_axis), 
             y = reorder(country, !!sym(y_axis)), 
-            fill = continent, 
-            label = ranking) +
+            fill = continent,
+            label = ranking,
+            alpha = 0.6) +
         geom_bar(stat = 'identity') +
         geom_text() +
         theme(text = element_text(size = 20)) +
-        scale_x_continuous(labels = comma)
+        scale_x_continuous(labels = comma) +
+        guides(label = 'none', fill = 'none')
       
       if (y_axis == "pop") {
         chart <- bar + labs(x = "Population", y = "Country")
@@ -349,7 +351,7 @@ app$callback(
         chart <- bar + labs(x = "GDP per Capita [USD]", y = "Country")
       }
       
-      chart <- chart + scale_color_ipsum() + theme_ipsum_tw()
+      chart <- chart + scale_fill_ipsum() + theme_ipsum_tw()
       chart_final <- ggplotly(
         chart, height = 3000, width=800, tooltip = c(y_axis)
         ) %>% layout(xaxis = list(side = "top"))
@@ -382,21 +384,20 @@ app$callback(
       )) %>%
       ggplot(aes(
         x = gdpPercap, y = lifeExp, size = pop,
-       fill = continent, text = text
-      ), shape = 21, colour = "white", alpha = 0.8) +
-      geom_point() +
+        color = continent, text = text
+      ), shape = 21) +
+      geom_point(alpha = 0.6) +
       scale_size(range = c(1.4, 19), name = "Population (M)") +
       ylab("Life Expectancy[Years]") +
       xlab("GDP Per Capita[USD]") +
       scale_x_log10(labels = scales::dollar) +
-      scale_fill_brewer(palette = "Set2") +
       scale_size_continuous(range = c(1, 20)) +
-      guides(size = FALSE) 
+      guides(size = 'none')
 
     p <- p + scale_color_ipsum() + theme_ipsum_tw()
 
     # ggplot interactive with plotly
-    ggplotly(p, tooltip = "text")
+    ggplotly(p, tooltip = "text") %>% layout(legend= list(itemsizing='constant'))
   }
 )
 
