@@ -34,8 +34,8 @@ target_filter <- htmlDiv(
     dbcRadioItems(
       id = "target",
       options = list(
-        list(label = "Life Expectancy", value = "lifeExp"),
         list(label = "Population", value = "pop"),
+        list(label = "Life Expectancy", value = "lifeExp"),
         list(label = "GDP per Capita", value = "gdpPercap")
       ),
       value = "pop",
@@ -49,7 +49,7 @@ target_filter <- htmlDiv(
 
 year_filter <- htmlDiv(
   list(
-    dbcLabel("Your Year Of Interest?", className = "h4"),
+    dbcLabel("Your Year of Interest?", className = "h4"),
     dccSlider(
       id = "year_id",
       min = 1952,
@@ -274,6 +274,13 @@ app$callback(
 )
 
 # World Trend
+#' Create a line plot showing world trend based on year and a category
+#' ("pop" or"lifeExp" or "gdpPerCap) in gapminder dataset
+#'
+#' @param year_filter int A year of interest
+#' @param xcol string A category in gapminder dataset
+#' @return Returns a lline chart
+
 app$callback(
   output("world-trend", "figure"),
   list(input("year_id", "value"), input("target", "value")),
@@ -333,6 +340,12 @@ app$callback(
 )
 
 # World ranking
+#' Create a bar chart showing world ranking based on a category
+#' ("pop" or"lifeExp" or "gdpPerCap) in the year of interest
+#' @param year_id int A year of interest
+#' @param y_axis string A category in gapminder dataset
+#' @return Returns a bar chart
+
 app$callback(
   output("world-ranking", "figure"),
   list(input("year_id", "value"), input("target", "value")),
