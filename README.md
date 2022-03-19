@@ -5,7 +5,7 @@ status](https://img.shields.io/github/license/UBC-MDS/our_changing_world)
 
 ***Learn more about how global population, life expectancy and per-capita Gross Domestic Product (GDP) have evolved over time***
 
-Link to the dashboard: https://our-changing-world.herokuapp.com/
+Link to the dashboard: https://our-changing-world-r.herokuapp.com/
 
 ## Welcome!
 
@@ -85,7 +85,7 @@ To download the contents of this GitHub page on to your local machine follow the
 
 3. To run an app instance locally, first install the dependencies by typing: `Rscript init.R`
 
-4. Launch ***app.py*** by typing: `Rscript src/app.R`
+4. Launch ***app.R*** by typing: `Rscript src/app.R`
 
 5. Using any modern web browser, visit http://127.0.0.1:8050/ to access the app.
 
@@ -96,4 +96,3 @@ If you have feedback for improvement (and we bet you do) or suggestions on any a
 If you want to report a problem or suggest an enhancement we would appreciate if you could `Open an Issue` on this github repository because then we can get right on it.
 
 Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our [code of conduct](https://github.com/UBC-MDS/our_changing_world/blob/main/CONDUCT.md) in all interactions.
-
