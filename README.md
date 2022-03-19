@@ -49,7 +49,7 @@ The [dashboard](https://our-changing-world-r.herokuapp.com/) consists of 5 main 
 
 (iii) A scatter plot chart on the middle left: Here, a bubble plot between Life Expectancy vs GDP per capita is presented for the options selected in the "What do you want to know" panel.
 
-(iv) A "World Trend" panel on the bottom right: Here, a time-series plot is presented for each region of the world for the options selected in the "What do you want to know" panel.
+(iv) A "World Trend" panel on the middle right: Here, a time-series plot is presented for each region of the world for the options selected in the "What do you want to know" panel.
 
 (v) A "World Ranking" panel on the bottom left: Here, a bar chart at the country level for the options selected in the "What do you want to know" panel is displayed in decreasing rank order. 
 
