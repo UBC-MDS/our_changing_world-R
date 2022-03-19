@@ -176,7 +176,16 @@ app$layout(
   )
 )
 
-
+#' Get the parameters for the world map 
+#'
+#' @param yr Integer, year
+#' @param colnm String, column name in c("lifeExp", "pop", "gdpPercap")
+#'
+#' @return List(variable_text, scale_factor)
+#' @export
+#'
+#' @examples
+#' get_para(2008, 'pop')
 get_para <- function(yr, colnm) {
   col_var <- sym(colnm)
   col_name_df <- data.frame(
@@ -200,20 +209,23 @@ get_para <- function(yr, colnm) {
   list(col_name_df[colnm, 1], scale)
 }
 
+# Plot the world map with input of year and column name
 app$callback(
   output("world-map", "figure"),
   list(input("year_id", "value"), input("target", "value")),
   plot_world <- function(yr, colnm) {
+    # get globe data
     world <- map_data("world") %>%
       filter(lat > -56)
-
+    # get countries' lat and lon
     countries <- read_csv("data/world_country.csv",
       col_select = c(4, 3, 2)
     )
     colnames(countries) <- c("country", "long", "lat")
 
     col_var <- sym(colnm)
-
+    
+    # countries' lon and lat joined in gapminder
     gap_geo <- gapminder %>%
       inner_join(countries)
 
@@ -222,6 +234,7 @@ app$callback(
     scale <- param[[2]]
     txt <- paste0("World Overview of ", title_txt)
 
+    # plot the world + geom_point
     world_map <- world %>%
       ggplot() +
       geom_polygon(
