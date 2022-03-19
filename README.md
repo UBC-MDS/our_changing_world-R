@@ -1,11 +1,11 @@
 # Our Changing World!
 
 ![license
-status](https://img.shields.io/github/license/UBC-MDS/our_changing_world)
+status](https://img.shields.io/github/license/UBC-MDS/our_changing_world-R)
 
 ***Learn more about how global population, life expectancy and per-capita Gross Domestic Product (GDP) have evolved over time***
 
-Link to the dashboard: https://our-changing-world.herokuapp.com/
+Link to the dashboard: http://our-changing-world-r.herokuapp.com/
 
 ## Welcome!
 
