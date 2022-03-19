@@ -294,7 +294,7 @@ app$callback(
         scale_y_continuous(labels = scales::comma) +
         scale_x_continuous(breaks = year_breaks) +
         scale_x_log10() +
-        labs(x = "Year", y = "Life Expectancy") +
+        labs(x = "Year", y = "Life Expectancy [years]") +
         geom_vline(xintercept = year_filter, linetype = "longdash")
     } else if (xcol == "gdpPercap") {
       p <- ggplot(gapminder, aes(
@@ -306,7 +306,7 @@ app$callback(
         scale_y_continuous(labels = scales::comma) +
         scale_x_continuous(breaks = year_breaks) +
         scale_x_log10() +
-        labs(x = "Year", y = "GDP Per Capita") +
+        labs(x = "Year", y = "GDP per capita [USD]") +
         geom_vline(xintercept = year_filter, linetype = "longdash")
     } else {
       p <- ggplot(gapminder, aes(
@@ -341,35 +341,35 @@ app$callback(
         filter(year == x_year)
       bar <- df %>% 
         arrange(desc(!!sym(y_axis))) %>% 
-        mutate(ranking = paste0('#', as.numeric(rownames(df)))) %>% 
+        mutate(ranking = paste0('      #', as.numeric(rownames(df)))) %>% 
         ggplot() +
         aes(x = !!sym(y_axis), 
             y = reorder(country, !!sym(y_axis)), 
             fill = continent,
-            label = ranking,
-            alpha = 0.6) +
-        geom_bar(stat = 'identity') +
+            label = ranking) + labs(fill='continent') +
+        geom_bar(stat = 'identity', alpha = 0.6) +
         geom_text() +
         theme(text = element_text(size = 20)) +
-        scale_x_continuous(labels = comma) +
-        guides(label = 'none', fill = 'none')
+        scale_x_continuous(labels = comma) 
+
+#        guides(label = 'none', fill = 'none')
       
       if (y_axis == "pop") {
         chart <- bar + labs(x = "Population", y = "Country")
       }
       if (y_axis == "lifeExp") {
-        chart <- bar + labs(x = "Life Expectancy [years]", y = "Country")
+        chart <- bar + labs(x = "Life Expectancy [Years]", y = "Country")
       }
       if (y_axis == "gdpPercap") {
         chart <- bar + labs(x = "GDP per Capita [USD]", y = "Country")
       }
       
-      chart <- chart + scale_fill_ipsum() + theme_ipsum_tw()
-      chart_final <- ggplotly(
+      chart <- chart + scale_fill_ipsum() + theme_ipsum_tw() 
+      ggplotly(
         chart, height = 3000, width=800, tooltip = c(y_axis)
         ) %>% layout(xaxis = list(side = "top"))
       
-      return(chart_final)
+      
     }
 )
 
@@ -401,9 +401,9 @@ app$callback(
       ), shape = 21) +
       geom_point(alpha = 0.6) +
       scale_size(range = c(1.4, 19), name = "Population (M)") +
-      ylab("Life Expectancy[Years]") +
-      xlab("GDP Per Capita[USD]") +
-      scale_x_log10(labels = scales::dollar) +
+      ylab("Life Expectancy [Years]") +
+      xlab("GDP Per Capita [USD]") +
+      scale_x_continuous(labels = scales::dollar) +
       scale_size_continuous(range = c(1, 20)) +
       guides(size = 'none')
 
