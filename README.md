@@ -30,7 +30,7 @@ The world that we live in has dramatically changed over the past several decades
 To tackle the global scale problems of poverty, inequality, and access to health, there needs to be a nuanced understanding of our world through data. Within the ambit of the Sustainable Development Goals (SDGs), there is a growing need for production, usage, and understanding of statistics and other information about socio-economic
 development at national, regional, and global levels.
 
-This dashboard was created with the objective of making such pertinent fact-based data available to the world in a comprehensible format using customizable visualization of global development statistics using data from Gapminder Foundation: gapminder. ***The goal is to help governments, international organizations, researchers, and policymakers understand basic trends about the state of the world as a first step towards addressing global challenges outlined in the SDGs.*** A more detailed proposal of this project could be found [here](https://github.com/UBC-MDS/our_changing_world/blob/main/docs/proposal.md).
+This dashboard was created with the objective of making such pertinent fact-based data available to the world in a comprehensible format using customizable visualization of global development statistics using data from Gapminder Foundation: gapminder. ***The goal is to help governments, international organizations, researchers, and policymakers understand basic trends about the state of the world as a first step towards addressing global challenges outlined in the SDGs.*** A more detailed proposal of this project could be found [here](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/docs/proposal.md).
 
 ## Contributors
 
