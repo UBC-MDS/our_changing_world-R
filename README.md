@@ -93,8 +93,8 @@ To download the contents of this GitHub page on to your local machine follow the
 
 ## Get involved
 
-If you have feedback for improvement (and we bet you do) or suggestions on any areas that we haven't yet thought of (and here we are certain you can), then please check out our [Contributing Guidelines](https://github.com/UBC-MDS/our_changing_world/blob/main/CONTRIBUTING.md).
+If you have feedback for improvement (and we bet you do) or suggestions on any areas that we haven't yet thought of (and here we are certain you can), then please check out our [Contributing Guidelines](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/CONTRIBUTING.md).
 
 If you want to report a problem or suggest an enhancement we would appreciate if you could `Open an Issue` on this github repository because then we can get right on it.
 
-Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our [code of conduct](https://github.com/UBC-MDS/our_changing_world/blob/main/CONDUCT.md) in all interactions.
+Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our [code of conduct](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/CONDUCT.md) in all interactions.
