@@ -1,11 +1,11 @@
 # Our Changing World!
 
 ![license
-status](https://img.shields.io/github/license/UBC-MDS/our_changing_world-R)
+status](https://img.shields.io/github/license/UBC-MDS/our_changing_world)
 
 ***Learn more about how global population, life expectancy and per-capita Gross Domestic Product (GDP) have evolved over time***
 
-Link to the dashboard: http://our-changing-world-r.herokuapp.com/
+Link to the dashboard: https://our-changing-world.herokuapp.com/
 
 ## Welcome!
 
@@ -65,7 +65,7 @@ To run this analysis using Docker, clone/download this repository, use the comma
 
 1. Copy and paste the following link: `git clone https://github.com/UBC-MDS/our_changing_world-R.git` to your Terminal. 
 
-2. On your terminal, type: `cd our_changing_world`.
+2. On your terminal, type: `cd our_changing_world-R`.
 
 3. Run the following command in your terminal.
 
@@ -81,11 +81,11 @@ To download the contents of this GitHub page on to your local machine follow the
 
 1. Copy and paste the following link: `git clone https://github.com/UBC-MDS/our_changing_world-R.git` to your Terminal. 
 
-2. On your terminal, type: `cd our_changing_world`.
+2. On your terminal, type: `cd our_changing_world-R`.
 
 3. To run an app instance locally, first install the dependencies by typing: `Rscript init.R`
 
-4. Launch ***app.py*** by typing: `Rscript src/app.py`
+4. Launch ***app.py*** by typing: `Rscript src/app.R`
 
 5. Using any modern web browser, visit http://127.0.0.1:8050/ to access the app.
 
