@@ -30,7 +30,7 @@ The world that we live in has dramatically changed over the past several decades
 To tackle the global scale problems of poverty, inequality, and access to health, there needs to be a nuanced understanding of our world through data. Within the ambit of the Sustainable Development Goals (SDGs), there is a growing need for production, usage, and understanding of statistics and other information about socio-economic
 development at national, regional, and global levels.
 
-This dashboard was created with the objective of making such pertinent fact-based data available to the world in a comprehensible format using customizable visualization of global development statistics using data from Gapminder Foundation: gapminder. ***The goal is to help governments, international organizations, researchers, and policymakers understand basic trends about the state of the world as a first step towards addressing global challenges outlined in the SDGs.*** A more detailed proposal of this project could be found [here](https://github.com/UBC-MDS/our_changing_world/blob/main/docs/proposal.md).
+This dashboard was created with the objective of making such pertinent fact-based data available to the world in a comprehensible format using customizable visualization of global development statistics using data from Gapminder Foundation: gapminder. ***The goal is to help governments, international organizations, researchers, and policymakers understand basic trends about the state of the world as a first step towards addressing global challenges outlined in the SDGs.*** A more detailed proposal of this project could be found [here](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/docs/proposal.md).
 
 ## Contributors
 
@@ -49,7 +49,7 @@ The [dashboard](https://our-changing-world-r.herokuapp.com/) consists of 5 main 
 
 (iii) A scatter plot chart on the middle left: Here, a bubble plot between Life Expectancy vs GDP per capita is presented for the options selected in the "What do you want to know" panel.
 
-(iv) A "World Trend" panel on the bottom right: Here, a time-series plot is presented for each region of the world for the options selected in the "What do you want to know" panel.
+(iv) A "World Trend" panel on the middle right: Here, a time-series plot is presented for each region of the world for the options selected in the "What do you want to know" panel.
 
 (v) A "World Ranking" panel on the bottom left: Here, a bar chart at the country level for the options selected in the "What do you want to know" panel is displayed in decreasing rank order. 
 
@@ -93,8 +93,8 @@ To download the contents of this GitHub page on to your local machine follow the
 
 ## Get involved
 
-If you have feedback for improvement (and we bet you do) or suggestions on any areas that we haven't yet thought of (and here we are certain you can), then please check out our [Contributing Guidelines](https://github.com/UBC-MDS/our_changing_world/blob/main/CONTRIBUTING.md).
+If you have feedback for improvement (and we bet you do) or suggestions on any areas that we haven't yet thought of (and here we are certain you can), then please check out our [Contributing Guidelines](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/CONTRIBUTING.md).
 
 If you want to report a problem or suggest an enhancement we would appreciate if you could `Open an Issue` on this github repository because then we can get right on it.
 
-Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our [code of conduct](https://github.com/UBC-MDS/our_changing_world/blob/main/CONDUCT.md) in all interactions.
+Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our [code of conduct](https://github.com/UBC-MDS/our_changing_world-R/blob/nrao944/CONDUCT.md) in all interactions.
