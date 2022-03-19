@@ -40,10 +40,10 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `our_changing_world` for local development.
+Ready to contribute? Here's how to set up `our_changing_world-R` for local development.
 
 1. Download a copy of `our_changing_world-R` locally.
-2. Install required libraries for our project `our_changing_world` using `pip`:
+2. Install required libraries for our project `our_changing_world-R`:
 
     ```console
     $ Rscript init.R
