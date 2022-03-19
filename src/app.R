@@ -34,8 +34,8 @@ target_filter <- htmlDiv(
     dbcRadioItems(
       id = "target",
       options = list(
-        list(label = "Life Expectancy", value = "lifeExp"),
         list(label = "Population", value = "pop"),
+        list(label = "Life Expectancy", value = "lifeExp"),
         list(label = "GDP per Capita", value = "gdpPercap")
       ),
       value = "pop",
@@ -49,7 +49,7 @@ target_filter <- htmlDiv(
 
 year_filter <- htmlDiv(
   list(
-    dbcLabel("Your Year Of Interest?", className = "h4"),
+    dbcLabel("Your Year of Interest?", className = "h4"),
     dccSlider(
       id = "year_id",
       min = 1952,
